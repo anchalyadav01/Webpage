@@ -9,48 +9,69 @@ body {
     background-color: #fff;
     color: #333;
 }
-
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    justify-content: space-between;
+    padding: 20px 10%;
     background-color: #f8f8f8;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+    flex: 1;
+    text-align: left;
+    padding-left: 8%;
+}
+
 .logo img {
-    width: 120px;
+    width: 150px;
     height: auto;
 }
 
-/* Navigation */
+
 nav {
+    flex: 2;
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
 }
 
-nav h1 {
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 50px;  
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
     font-size: 18px;
     font-weight: bold;
 }
 
-nav h1 a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+
+.nav-links li.spaced {
+    margin-right: 40px;  
 }
 
-nav h1 .active {
+
+.nav-links .active {
     color: red;
 }
 
-nav h1 .btn {
+
+.btn {
     background-color: #007bff;
     color: #fff;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 
@@ -58,32 +79,28 @@ nav h1 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
-    gap: 50px;
+    padding: 60px 12%;
+    gap: 40px; 
 }
 
 .text-section {
     flex: 1;
-    max-width: 500px;
+    max-width: 550px;
+    text-align: left;
 }
 
+.text-section h1, .text-section h2 {
+    margin-bottom: 15px;
+}
 
 .text-section p {
-    margin-bottom: 20px; 
-}
-
-.read-more-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .image-section {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .image-section img {
@@ -92,27 +109,30 @@ nav h1 .btn {
 }
 
 
-@media (max-width: 768px) {
-    .content {
+@media (max-width: 992px) {
+    header {
         flex-direction: column;
         text-align: center;
     }
 
-    .text-section p {
+    .logo {
+        padding-left: 0;
         margin-bottom: 15px;
-    }
-    
-    .read-more-btn {
-        margin-top: 15px;
     }
 
     nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        justify-content: center;
     }
 
-    nav h1 {
-        font-size: 16px;
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px; 
     }
 }
